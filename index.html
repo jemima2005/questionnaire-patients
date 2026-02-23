@@ -1,5 +1,121 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Questionnaire</title></head>
-  <body>OK</body>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Questionnaire Patient — Accès aux médicaments</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="card">
+      <h1>Questionnaire Patient — Accès aux médicaments</h1>
+      <p class="muted">Durée : ~2 minutes • Anonyme • Mémoire Licence (L3)</p>
+      <p class="muted">Aucun nom, aucune donnée médicale. Répondez honnêtement 🙏🏾</p>
+    </header>
+
+    <form id="survey" class="card">
+      <div class="field">
+        <label>1) À quelle fréquence tu cherches un médicament introuvable ?</label>
+        <select name="freq_introuvable" required>
+          <option value="" disabled selected>Choisir…</option>
+          <option>Jamais</option>
+          <option>Rarement</option>
+          <option>Souvent</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>2) Tu fais combien de pharmacies avant de trouver ?</label>
+        <select name="nb_pharmacies" required>
+          <option value="" disabled selected>Choisir…</option>
+          <option>1</option>
+          <option>2–3</option>
+          <option>4+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>3) Quel est le plus gros problème ?</label>
+        <div class="choices">
+          <label><input type="radio" name="plus_gros_probleme" value="Temps" required> Temps</label>
+          <label><input type="radio" name="plus_gros_probleme" value="Transport"> Transport</label>
+          <label><input type="radio" name="plus_gros_probleme" value="Prix"> Prix</label>
+          <label><input type="radio" name="plus_gros_probleme" value="Stress"> Stress</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>4) Tu acceptes de réserver avant de te déplacer ?</label>
+        <div class="choices">
+          <label><input type="radio" name="reserver_avant_deplacement" value="Oui" required> Oui</label>
+          <label><input type="radio" name="reserver_avant_deplacement" value="Non"> Non</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>5) Tu préfères :</label>
+        <div class="choices">
+          <label><input type="radio" name="canal_prefere" value="SMS" required> SMS</label>
+          <label><input type="radio" name="canal_prefere" value="WhatsApp"> WhatsApp</label>
+          <label><input type="radio" name="canal_prefere" value="Application"> Application</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>6) Tu es prêt à partager ta localisation ?</label>
+        <div class="choices">
+          <label><input type="radio" name="partager_localisation" value="Oui" required> Oui</label>
+          <label><input type="radio" name="partager_localisation" value="Non"> Non</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>7) Tu acceptes une alternative (générique) si indisponible ?</label>
+        <div class="choices">
+          <label><input type="radio" name="accepte_alternative_generique" value="Oui" required> Oui</label>
+          <label><input type="radio" name="accepte_alternative_generique" value="Non"> Non</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>8) Tu veux voir le prix :</label>
+        <div class="choices">
+          <label><input type="radio" name="affichage_prix" value="Prix exact" required> Prix exact</label>
+          <label><input type="radio" name="affichage_prix" value="Fourchette"> Fourchette</label>
+          <label><input type="radio" name="affichage_prix" value="Pas obligatoire"> Pas obligatoire</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>9) Tu utiliserais l’app si gratuite ?</label>
+        <div class="choices">
+          <label><input type="radio" name="utiliser_si_gratuite" value="Oui" required> Oui</label>
+          <label><input type="radio" name="utiliser_si_gratuite" value="Non"> Non</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>10) Note l’intérêt (1 = faible, 5 = très utile)</label>
+        <select name="note_interet" required>
+          <option value="" disabled selected>Choisir…</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <button id="submitBtn" type="submit">Envoyer</button>
+      <p id="status" class="status" aria-live="polite"></p>
+    </form>
+
+    <footer class="muted center">
+      Merci 🙏🏾 Vous pouvez partager le lien à d’autres personnes.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
 </html>
