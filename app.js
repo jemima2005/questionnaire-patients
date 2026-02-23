@@ -19,23 +19,12 @@ form.addEventListener("submit", async (e) => {
   const payload = Object.fromEntries(fd.entries());
 
   try {
-    const res = await fetch(SCRIPT_URL, {
+    await fetch(SCRIPT_URL, {
       method: "POST",
+      mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
     });
-
-    const text = await res.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      data = { ok: res.ok };
-    }
-
-    if (!res.ok || !data.ok) {
-      throw new Error(data.error || "Envoi échoué");
-    }
 
     form.reset();
     setStatus("Merci ! Réponse enregistrée ✅");
