@@ -1,6 +1,5 @@
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwouzX3QqyGj-AT9TbqvBTebd3CfXf57sehRpCFSuEEz3-GeKRIm-ExbLHRBO3UmPSgJA/exec";
-
+  "https://script.google.com/macros/s/AKfycbz2JpDUsBML4VblQgbYZ9zJ1CaeLIYZU89F3d9DaMcmORKkthQ-wQHI5cLgynwmnI0W6g/exec";
 const form = document.getElementById("survey");
 const statusEl = document.getElementById("status");
 const btn = document.getElementById("submitBtn");
